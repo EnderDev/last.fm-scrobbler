@@ -7,14 +7,23 @@
   "license": "MIT",
   "author": "EnderDev <kieran@dothq.org>",
   "scripts": {
-    "dev": "tsx src/main.ts"
+    "generate": "tsx src/generate.ts",
+    "start": "tsx src/index.ts"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^20.4.9",
+    "@types/node-notifier": "^8.0.2",
+    "@types/retry": "^0.12.2",
     "tsx": "^3.12.7"
   },
   "dependencies": {
-    "fs-extra": "^11.1.1"
+    "axios": "^1.4.0",
+    "chalk": "^5.3.0",
+    "dotenv": "^16.3.1",
+    "fs-extra": "^11.1.1",
+    "node-notifier": "^10.0.1",
+    "pushbullet": "^3.0.0",
+    "retry": "^0.13.1"
   }
 }
