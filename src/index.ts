@@ -74,9 +74,9 @@ const main = async () => {
 
 	for await (const stream of slicedHistory) {
 		try {
-			await sleep(5000);
+			await sleep(10000);
 			await scrobble(i, streamingHistory.length, stream, token);
-		} catch (e) {
+		} catch (e: any) {
 			console.error(e);
 			await notify({ title: "Last.fm JS error", message: e.toString() });
 			process.exit(1);

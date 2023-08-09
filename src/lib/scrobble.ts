@@ -81,14 +81,13 @@ export const scrobble = async (
 	writeFileSync(
 		resolve(homedir(), ".lastfmscrobbling"),
 		`${scrobbleTitle} from ${new Date(body.timestamp).toLocaleDateString("en-GB", {
-			weekday: "short",
 			year: "numeric",
-			month: "short",
-			day: "numeric",
-			hour: "numeric",
-			minute: "numeric",
-			second: "numeric"
-		})}`,
+			month: "2-digit",
+			day: "2-digit",
+			hour: "2-digit",
+			minute: "2-digit",
+			second: "2-digit"
+		})} (${index + 1}/${maxScrobbles.toLocaleString()})`,
 		"utf-8"
 	);
 
@@ -153,7 +152,7 @@ export const scrobble = async (
 						response
 					);
 				}
-			} catch (e) {
+			} catch (e: any) {
 				const errorData = {
 					method: e.response.config.method,
 					url: new URL(e.response.config.url, e.response.config.baseURL).href,

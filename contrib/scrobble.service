@@ -1,0 +1,14 @@
+[Unit]
+Description=Scrobbler
+After=systemd-user-sessions.service,systemd-journald.service
+
+[Service]
+ExecStart=/usr/bin/node /home/kieran/Documents/lastfmscrobble/build-dist/index.cjs
+Type=simple
+User=kieran
+WorkingDirectory=/home/kieran/Documents/lastfmscrobble/
+Restart=always
+Environment="DISPLAY=:0" "XAUTHORITY=/home/kieran/.Xauthority"
+
+[Install]
+WantedBy=multi-user.target
