@@ -10,6 +10,8 @@
     "dev": "tsx src/main.ts"
   },
   "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "^20.4.9",
     "tsx": "^3.12.7"
   },
   "dependencies": {
